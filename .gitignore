@@ -205,3 +205,49 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Project-specific
+# Model checkpoints and weights
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+
+# Data directories
+data/input/*
+data/output/*
+!data/input/.gitkeep
+!data/output/.gitkeep
+
+# 3D files
+*.ply
+*.obj
+*.stl
+*.mtl
+*.off
+*.gltf
+*.glb
+*.fbx
+
+# Image and mask files (except examples)
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tiff
+!examples/*.jpg
+!examples/*.jpeg
+!examples/*.png
+
+# Gradio temporary files
+gradio_cached_examples/
+flagged/
+
+# Open3D cache
+.open3d/
+
+# Temporary processing files
+tmp/
+temp/
+*.tmp
