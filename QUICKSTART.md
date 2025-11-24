@@ -2,11 +2,13 @@
 
 Get up and running with the 2D to 3D Converter in under 10 minutes!
 
+> **🍎 Mac Users**: This works great on Mac! See [SETUP_MAC.md](SETUP_MAC.md) for Mac-specific instructions with Apple Silicon GPU support.
+
 ## Prerequisites Check
 
 - [ ] Python 3.8 or higher installed
-- [ ] GPU with CUDA support (optional but recommended)
-- [ ] At least 8GB RAM
+- [ ] GPU support (CUDA for Windows/Linux, MPS for Apple Silicon, or CPU)
+- [ ] At least 8GB RAM (16GB recommended for Mac)
 - [ ] 10GB free disk space
 
 ## Installation (5 minutes)

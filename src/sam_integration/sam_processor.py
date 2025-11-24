@@ -21,7 +21,16 @@ class SAMProcessor:
             checkpoint_path: Path to SAM 3D Objects checkpoint
         """
         self.checkpoint_path = checkpoint_path or "checkpoints/sam-3d-objects"
-        self.device = "cuda" if torch.cuda.is_available() else "cpu"
+
+        # Device selection: CUDA > MPS (Mac) > CPU
+        if torch.cuda.is_available():
+            self.device = "cuda"
+        elif hasattr(torch.backends, 'mps') and torch.backends.mps.is_available():
+            self.device = "mps"  # Apple Silicon GPU
+        else:
+            self.device = "cpu"
+
+        print(f"Using device: {self.device}")
         self.sam_model = None
         self.inference = None
 

@@ -21,18 +21,25 @@ def test_import(module_name, package_name=None):
 
 
 def check_cuda():
-    """Check CUDA availability"""
+    """Check CUDA/MPS availability"""
     try:
         import torch
+        import platform
+
         if torch.cuda.is_available():
             print(f"✓ CUDA available          - {torch.cuda.get_device_name(0)}")
             print(f"  CUDA version: {torch.version.cuda}")
             return True
+        elif hasattr(torch.backends, 'mps') and torch.backends.mps.is_available():
+            print(f"✓ MPS available           - Apple Silicon GPU acceleration")
+            print(f"  Platform: {platform.machine()}")
+            return True
         else:
-            print("⚠ CUDA not available      - Will use CPU (slower)")
+            print("⚠ GPU not available       - Will use CPU (slower)")
+            print(f"  Platform: {platform.system()} {platform.machine()}")
             return False
     except Exception as e:
-        print(f"✗ Error checking CUDA: {e}")
+        print(f"✗ Error checking GPU: {e}")
         return False
 
 

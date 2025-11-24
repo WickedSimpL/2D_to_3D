@@ -1,4 +1,5 @@
 # Core dependencies
+# Compatible with Linux, macOS (Intel and Apple Silicon), and Windows
 numpy>=1.24.0
 torch>=2.0.0
 torchvision>=0.15.0

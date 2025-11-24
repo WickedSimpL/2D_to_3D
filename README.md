@@ -38,6 +38,8 @@ Convert 2D images to 3D watertight meshes using Meta's SAM 3D Objects model. Thi
 
 ## Installation
 
+> **🍎 Mac Users**: See [SETUP_MAC.md](SETUP_MAC.md) for Mac-specific installation instructions, including Apple Silicon (M1/M2/M3) support with MPS acceleration.
+
 ### 1. Clone the Repository
 
 ```bash
